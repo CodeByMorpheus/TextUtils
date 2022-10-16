@@ -11,9 +11,9 @@ export default function Navbar(props) {
     >
       {/* Title and Nav-Item Button Section */}
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link to="/TextUtils" className="navbar-brand" href="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,7 +28,7 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link active" aria-current="page">
+              <Link to="/home" className="nav-link active" aria-current="page">
                 Home
               </Link>
               {/* <a to="/" className="nav-link active" aria-current="page">

@@ -2,33 +2,42 @@
 
 import React, { useState } from "react";
 
-export default function About() {
+export default function About(props) {
   // ****---- Function Declaration Section ----**** //
-  const [myStyle, setMyStyle] = useState({
-    color: "#042743",
-    backgroundColor: "white",
-  });
-  const [btnText, setBtnText] = useState("Enable Dark mode");
-  const toggleStyle = () => {
-    if (myStyle.color === "#042743") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "#042743",
-        border: "1px solid white",
-      });
-      setBtnText("Enable Light Mode");
-    } else {
-      setMyStyle({
-        color: "#042743",
-        backgroundColor: "white",
-      });
-      setBtnText("Enable Dark Mode");
-    }
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "#042743",
+  //   backgroundColor: "white",
+  // });
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "rgb(34 74 104)" : "white",
   };
+
+  // ****---- toggleStyle functions & btnText State used for in-page Dark Mode Button (Not needed now) ----**** //
+  // const [btnText, setBtnText] = useState("Enable Dark mode");
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "#042743") {
+  //     setMyStyle({
+  //       color: "white",
+  //       backgroundColor: "#042743",
+  //       border: "1px solid white",
+  //     });
+  //     setBtnText("Enable Light Mode");
+  //   } else {
+  //     setMyStyle({
+  //       color: "#042743",
+  //       backgroundColor: "white",
+  //     });
+  //     setBtnText("Enable Dark Mode");
+  //   }
+  // };
 
   return (
     <>
-      <div className="container" style={myStyle}>
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         {/* Accordion Section */}
         <h1>About Us</h1>
 
@@ -45,7 +54,7 @@ export default function About() {
                   aria-controls="collapseOne"
                   style={myStyle}
                 >
-                  Accordion Item #1
+                  <strong>Analyze Your Text</strong>
                 </button>
               </h2>
               <div
@@ -55,15 +64,9 @@ export default function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body" style={myStyle}>
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  TextUtils gives you a way to analyze your text quickly and
+                  efficiently. Be it word count, character count, preview of
+                  analyzed text, its a complete and a handy tool{" "}
                 </div>
               </div>
             </div>
@@ -78,7 +81,7 @@ export default function About() {
                   aria-controls="collapseTwo"
                   style={myStyle}
                 >
-                  Accordion Item #2
+                  <strong>Free to use</strong>
                 </button>
               </h2>
               <div
@@ -88,15 +91,11 @@ export default function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body" style={myStyle}>
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  TextUtils is a free character counter tool that provides
+                  instant character count & word count statistics for a given
+                  text. Text Utils reports the number of words and characters.
+                  Thus it is sustainable for writing text with word/character
+                  limit.
                 </div>
               </div>
             </div>
@@ -111,7 +110,7 @@ export default function About() {
                   aria-controls="collapseThree"
                   style={myStyle}
                 >
-                  Accordion Item #3
+                  <strong>Browser Compatible</strong>
                 </button>
               </h2>
               <div
@@ -121,21 +120,17 @@ export default function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body" style={myStyle}>
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  This word counter software works in any web browser such as
+                  Chrome, Firefox, Internet Explorer, Safari and Opera. It suits
+                  to count characters in facebook, blog, books, excel document,
+                  pdf document, essay, ets.
                 </div>
               </div>
             </div>
           </div>
-          {/* Dark Mode Toggle Button Section */}
-          <div className="container">
+          {/* In-Page Dark Mode Toggle Button (Not needed anymore) Section */}
+
+          {/* <div className="container">
             <button
               onClick={toggleStyle}
               type="button"
@@ -143,7 +138,7 @@ export default function About() {
             >
               {btnText}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -68,7 +68,7 @@ export default function TextForm(props) {
             className="form-control"
             value={text}
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
               color: props.mode === "dark" ? "white" : "#042743",
             }}
             id="myBox"
@@ -79,22 +79,32 @@ export default function TextForm(props) {
         </div>
 
         {/* Buttons Section */}
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert To Uppercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
           Convert To Lowercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleClearClick}
+        >
           Clear Text
         </button>
-        <button type="submit" onClick={speak} className="btn btn-primary mx-=1">
+        <button
+          type="submit"
+          onClick={speak}
+          className="btn btn-primary mx-1 my-1"
+        >
           Speak
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleExtraSpaces}
+        >
           Remove extra spaces
         </button>
       </div>
@@ -108,11 +118,23 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summary</h2>
         <p>
-          <b>{text.split(" ").length}</b> words and <b>{text.length}</b>{" "}
-          characters
+          <b>
+            {
+              text.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length
+            }
+          </b>{" "}
+          words and <b>{text.length}</b> characters
         </p>
         <p>
-          <b>{0.008 * text.split(" ").length}</b> Minutes to read
+          <b>
+            {0.008 *
+              text.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length}
+          </b>{" "}
+          Minutes to read
         </p>
         <h2>Preview Your Text</h2>
         <p>

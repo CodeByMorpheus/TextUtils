@@ -17,7 +17,7 @@ function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "grey";
+      document.body.style.backgroundColor = "#042743";
       document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
@@ -40,6 +40,26 @@ function App() {
           <Routes>
             <Route
               exact
+              path="/TextUtils"
+              element={
+                <TextForm
+                  heading="Enter the text to analyze below"
+                  mode={mode}
+                />
+              }
+            ></Route>
+            <Route
+              exact
+              path="/home"
+              element={
+                <TextForm
+                  heading="Enter the text to analyze below"
+                  mode={mode}
+                />
+              }
+            ></Route>
+            <Route
+              exact
               path="/"
               element={
                 <TextForm
@@ -48,7 +68,7 @@ function App() {
                 />
               }
             ></Route>
-            <Route exact path="about" element={<About />} />
+            <Route exact path="about" element={<About mode={mode} />} />
           </Routes>
         </div>
       </Router>
