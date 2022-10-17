@@ -1,3 +1,4 @@
+// ****---- Alert Component not Used Bcz it had issues ----**** //
 import React from "react";
 
 function Alert(props) {
