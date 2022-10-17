@@ -60,7 +60,7 @@ export default function TextForm(props) {
       <div
         className="container"
         style={{
-          color: props.mode === "dark" ? "white" : "#042743",
+          color: props.mode === "dark" ? "white" : "rgb(43 63 79)",
         }}
       >
         {/* Text-Area Section */}
@@ -70,8 +70,9 @@ export default function TextForm(props) {
             className="form-control"
             value={text}
             style={{
-              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
-              color: props.mode === "dark" ? "white" : "#042743",
+              backgroundColor:
+                props.mode === "dark" ? "rgb(64 94 117)" : "white",
+              color: props.mode === "dark" ? "white" : "rgb(43 63 79)",
             }}
             id="myBox"
             onChange={handleOnChange}
@@ -130,7 +131,7 @@ export default function TextForm(props) {
       <div
         className="container my-3 "
         style={{
-          color: props.mode === "dark" ? "white" : "#042743",
+          color: props.mode === "dark" ? "white" : "rgb(43 63 79)",
         }}
       >
         <h3>Your Text Summary</h3>

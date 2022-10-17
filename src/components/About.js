@@ -5,27 +5,27 @@ import React from "react";
 export default function About(props) {
   // ****---- Function Declaration Section ----**** //
   // const [myStyle, setMyStyle] = useState({
-  //   color: "#042743",
+  //   color: "rgb(43 63 79)",
   //   backgroundColor: "white",
   // });
   let myStyle = {
     color: props.mode === "dark" ? "white" : "black",
-    backgroundColor: props.mode === "dark" ? "rgb(34 74 104)" : "white",
+    backgroundColor: props.mode === "dark" ? "rgb(64 94 117)" : "white",
   };
 
   // ****---- toggleStyle functions & btnText State used for in-page Dark Mode Button (Not needed now) ----**** //
   // const [btnText, setBtnText] = useState("Enable Dark mode");
   // const toggleStyle = () => {
-  //   if (myStyle.color === "#042743") {
+  //   if (myStyle.color === "rgb(43 63 79)") {
   //     setMyStyle({
   //       color: "white",
-  //       backgroundColor: "#042743",
+  //       backgroundColor: "rgb(43 63 79)",
   //       border: "1px solid white",
   //     });
   //     setBtnText("Enable Light Mode");
   //   } else {
   //     setMyStyle({
-  //       color: "#042743",
+  //       color: "rgb(43 63 79)",
   //       backgroundColor: "white",
   //     });
   //     setBtnText("Enable Dark Mode");
@@ -39,7 +39,7 @@ export default function About(props) {
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
         {/* Accordion Section */}
-        <h1>About TextUtils</h1>
+        <h2>About TextUtils</h2>
 
         <div>
           <div className="accordion" id="accordionExample">
