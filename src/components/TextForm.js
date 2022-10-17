@@ -39,11 +39,7 @@ export default function TextForm(props) {
   };
 
   const handleCopy = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    text.setSelectionRange(0, 9999);
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
   };
 
   const handleExtraSpaces = () => {
@@ -138,7 +134,8 @@ export default function TextForm(props) {
         <p>
           <b>
             {
-              text.split(" ").filter((element) => {
+              // Regular Expression from JavaScript
+              text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }
