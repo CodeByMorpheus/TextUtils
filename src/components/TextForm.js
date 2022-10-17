@@ -41,7 +41,9 @@ export default function TextForm(props) {
   const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
+    text.setSelectionRange(0, 9999);
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();
   };
 
   const handleExtraSpaces = () => {
@@ -62,7 +64,7 @@ export default function TextForm(props) {
         }}
       >
         {/* Text-Area Section */}
-        <h1>{props.heading}</h1>
+        <h2 className="mb-2">{props.heading}</h2>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -79,29 +81,44 @@ export default function TextForm(props) {
         </div>
 
         {/* Buttons Section */}
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           Convert To Uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLoClick}
+        >
           Convert To Lowercase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleClearClick}
         >
           Clear Text
         </button>
         <button
+          disabled={text.length === 0}
           type="submit"
           onClick={speak}
           className="btn btn-primary mx-1 my-1"
         >
           Speak
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopy}
+        >
           Copy Text
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleExtraSpaces}
         >
@@ -116,7 +133,7 @@ export default function TextForm(props) {
           color: props.mode === "dark" ? "white" : "#042743",
         }}
       >
-        <h2>Your Text Summary</h2>
+        <h3>Your Text Summary</h3>
         <p>
           <b>
             {
@@ -136,13 +153,9 @@ export default function TextForm(props) {
           </b>{" "}
           Minutes to read
         </p>
-        <h2>Preview Your Text</h2>
+        <h3>Preview Your Text</h3>
         <p>
-          <i>
-            {text.length > 0
-              ? text
-              : "Enter Something in the Text-box for Preview"}
-          </i>
+          <i>{text.length > 0 ? text : "Nothing to Preview"}</i>
         </p>
       </div>
     </>

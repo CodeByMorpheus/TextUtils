@@ -18,11 +18,11 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   };
   return (
@@ -42,7 +42,7 @@ function App() {
               path="/TextUtils"
               element={
                 <TextForm
-                  heading="Enter the text to analyze below"
+                  heading="TextUtils - Word Counter, Character Counter, Remove Extra Spaces"
                   mode={mode}
                 />
               }
@@ -51,7 +51,7 @@ function App() {
               path="/home"
               element={
                 <TextForm
-                  heading="Enter the text to analyze below"
+                  heading="TextUtils - Word Counter, Character Counter, Remove Extra Spaces"
                   mode={mode}
                 />
               }
@@ -61,7 +61,7 @@ function App() {
               path="/"
               element={
                 <TextForm
-                  heading="Enter the text to analyze below"
+                  heading="TextUtils - Word Counter, Character Counter, Remove Extra Spaces"
                   mode={mode}
                 />
               }

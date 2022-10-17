@@ -1,6 +1,6 @@
 // ****---- About Us Component ----**** //
 
-import React, { useState } from "react";
+import React from "react";
 
 export default function About(props) {
   // ****---- Function Declaration Section ----**** //
@@ -39,7 +39,7 @@ export default function About(props) {
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
         {/* Accordion Section */}
-        <h1>About Us</h1>
+        <h1>About TextUtils</h1>
 
         <div>
           <div className="accordion" id="accordionExample">
